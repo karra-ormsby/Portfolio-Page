@@ -1,0 +1,88 @@
+:root {
+    --about-me-color: #559cd6;
+    --projects-color: #6b9955;
+    --contact-me-color: #e69912;
+}
+
+* {
+    color: white;
+    background-color: #1c1c1c;
+    line-height: 1.5;
+    font-family: Monaco, 'Courier New', monospace;
+}
+
+header {
+    text-align: center;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+
+header a {
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+p {
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+ul li:nth-child(1):hover a {
+    background-color: var(--about-me-color);
+}
+
+ul li:nth-child(2):hover a {
+    background-color: var(--projects-color);
+}
+
+ul li:nth-child(3):hover a {
+    background-color: var(--contact-me-color);
+}
+
+h2 {
+    font-size: 2em;
+    padding: 10px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+#about-me h2 {
+    color: var(--about-me-color);
+
+}
+
+.avatar {
+    max-width: 40%;
+}
+
+#projects h2 {
+    color: var(--projects-color);
+}
+
+.project-other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-other img{
+    max-width: 80%;
+}
+
+.section-content div {
+    padding-bottom: 50px;
+}
+
+#contact-me h2 {
+    color: var(--contact-me-color);
+}
