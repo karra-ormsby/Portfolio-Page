@@ -52,7 +52,6 @@ h2 {
 }
 
 img {
-    height: auto;
     max-width: 100%;
 }
 
@@ -69,15 +68,19 @@ img {
     color: var(--projects-color);
 }
 
-.project-other {
+/* .project-main {
+    text-align: center;
+} */
+
+/* .project-other {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
-.project-other img{
+/* .project-other img{
     max-width: 80%;
-}
+} */
 
 .section-content div {
     padding-bottom: 50px;
@@ -85,4 +88,97 @@ img {
 
 #contact-me h2 {
     color: var(--contact-me-color);
+}
+
+@media screen and (min-width: 992px) {
+    main section {
+        padding-bottom: 20px;
+    }
+
+    header {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header ul {
+        display: flex;
+        padding-top: 20px;
+    }
+
+    header li {
+        padding: 0 20px;
+    }
+
+    #about-me {
+        display: flex;
+    }
+
+    .avatar {
+        max-width: 20%;
+    }
+
+    #about-me .section-heading {
+        border-right: var(--about-me-color) solid 3px;
+    }
+
+    #about-me .section-content{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    #projects {
+        display: flex;
+    }
+
+    #projects .section-heading {
+        border-right: var(--projects-color) solid 3px;
+    }
+
+    #projects img {
+        padding: 0 15px;
+    }
+
+    #projects .section-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .project-main {
+        flex: 1 1 45%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-other {
+        flex:1 1 30%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact-me {
+    display: flex;
+    }
+
+    #contact-me .section-heading {
+        border-right: var(--contact-me-color) solid 3px;
+    }
+
+    #contact-me .contact-info {
+    display: flex;
+    }
+
+    .section-heading {
+        min-width: 18%;
+    }
+
+    .section-content {
+        padding-left: 20px;
+    }
+
+    footer {
+        text-align: end;
+        padding-top: 33px;
+    }
 }
