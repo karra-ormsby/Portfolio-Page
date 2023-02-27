@@ -22,32 +22,47 @@ header ul {
 
 header a {
     text-decoration: none;
-    font-size: 1.3em;
+    font-size: 1.3rem;
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 3.5rem;
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     padding: 10px;
 }
 
+ul li:nth-child(1) a{
+    color: var(--about-me-color);
+}
+
+ul li:nth-child(2) a {
+    color: var(--projects-color);
+}
+
+ul li:nth-child(3) a {
+    color: var(--contact-me-color);
+}
+
 ul li:nth-child(1):hover a {
+    color: white;
     background-color: var(--about-me-color);
 }
 
 ul li:nth-child(2):hover a {
+    color: white;
     background-color: var(--projects-color);
 }
 
 ul li:nth-child(3):hover a {
+    color: white;
     background-color: var(--contact-me-color);
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2rem;
     padding: 10px;
 }
 
@@ -68,19 +83,9 @@ img {
     color: var(--projects-color);
 }
 
-/* .project-main {
-    text-align: center;
-} */
-
-/* .project-other {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-/* .project-other img{
-    max-width: 80%;
-} */
+.project-other img {
+    width: 80%;
+}
 
 .section-content div {
     padding-bottom: 50px;
@@ -90,9 +95,72 @@ img {
     color: var(--contact-me-color);
 }
 
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    header {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header ul {
+        display: flex;
+        padding-top: 20px;
+    }
+
+    header li {
+        padding: 0 10px;
+    }
+
+    #projects {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #projects img {
+        padding: 0 10px;
+    }
+
+    #projects .section-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .project-main {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-other {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 @media screen and (min-width: 992px) {
     main section {
         padding-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
     }
 
     header {
@@ -127,8 +195,10 @@ img {
         align-items: flex-end;
     }
 
+    /*had to add flex-direction: row here otherwise it  continued to be column which was set in the 768 media query*/
     #projects {
         display: flex;
+        flex-direction: row;
     }
 
     #projects .section-heading {
@@ -142,17 +212,16 @@ img {
     #projects .section-content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
 
     .project-main {
-        flex: 1 1 45%;
+        flex: 0 0 50%;
         display: flex;
         flex-direction: column;
     }
 
     .project-other {
-        flex:1 1 30%;
+        flex: 0 0 50%;
         display: flex;
         flex-direction: column;
     }
@@ -166,10 +235,13 @@ img {
     }
 
     #contact-me .contact-info {
-    display: flex;
+        display: flex;
+    
     }
 
     .section-heading {
+        padding: 0;
+        margin: 0;
         min-width: 18%;
     }
 
@@ -182,3 +254,4 @@ img {
         padding-top: 33px;
     }
 }
+
