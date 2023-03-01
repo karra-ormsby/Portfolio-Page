@@ -14,12 +14,26 @@
             <h1>Karra Ormsby</h1>
 
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li>
                         <a href="#about-me">About Me</a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a href="#">Projects</a>
+                        <ul class="dropdown">
+                            <li>
+                                <a href="#project-1">Project 1</a>
+                            </li>
+                            <li>
+                                <a href="#project-2">Project 2</a>
+                            </li>
+                            <li>
+                                <a href="#project-3">Project 3</a>
+                            </li>
+                            <li>
+                                <a href="#project-4">Project 4</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#contact-me">Contact Me</a>
@@ -28,6 +42,7 @@
             </nav>
         </header>
 
+        <!-- Should all divs become soemthing else? Maybe sections? If change divs remember to change the css-->
         <main>
             <section id="about-me">
                 <div class="section-heading">
@@ -44,21 +59,29 @@
                     <h2>Projects</h2>
                 </div>
                 <div class="section-content">
-                    <div class="project-main">
+                    <div class="project-main" id="project-1">
+                        <a href="https://github.com/">
+                            <img src="./assets/images/Placeholder image.jpeg">
+                        </a>
                         <p>Main project</p>
-                        <img src="./assets/images/Placeholder image.jpeg">
                     </div>
-                    <div class="project-other">
+                    <div class="project-other" id="project-2">
+                        <a href="https://github.com/">
+                            <img src="./assets/images/Placeholder image.jpeg">
+                        </a>
                         <p>Project 2</p>
-                        <img src="./assets/images/Placeholder image.jpeg">
                     </div>
-                    <div class="project-other">
+                    <div class="project-other" id="project-3">
+                        <a href="https://github.com/">
+                            <img src="./assets/images/Placeholder image.jpeg">
+                        </a>
                         <p>Project 3</p>
-                        <img src="./assets/images/Placeholder image.jpeg">
                     </div>
-                    <div class="project-other">
+                    <div class="project-other" id="project-4">
+                        <a href="https://github.com/">
+                            <img src="./assets/images/Placeholder image.jpeg">
+                        </a>
                         <p>Project 4</p>
-                        <img src="./assets/images/Placeholder image.jpeg">
                     </div>
                 </div>
             </section>
@@ -69,9 +92,10 @@
                 </div>
                 <div class="section-content">
                     <div class="contact-info">
-                        <p>Phone: 04XX XXX XXX</p>
-                        <p>Email: someones email@gmail.com</p>
-                        <p>GitHub: GitHub link</p>
+                        <p><img src="./assets/images/phone.png" class="contact-icons">Phone: 04XX XXX XXX</p>
+                        <p><img src="./assets/images/email.png" class="contact-icons">Email: someonesemail@gmail.com</p>
+                        <p><img src="./assets/images/github.png" class="contact-icons">GitHub: GitHub link</p>
+                        <p><img src="./assets/images/linkedin.svg.png" class="contact-icons">LinkedIn: LinkedIn link</p>
                     </div>
                 </div>
             </section>

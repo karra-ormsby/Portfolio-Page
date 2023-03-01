@@ -6,9 +6,9 @@
 
 * {
     color: white;
-    background-color: #1c1c1c;
+    background-color: #2a2a2a;
     line-height: 1.5;
-    font-family: Monaco, 'Courier New', monospace;
+    font-family: Verdana, 'sans-serif';
 }
 
 header {
@@ -18,7 +18,6 @@ header {
 header ul {
     list-style-type: none;
 }
-
 
 header a {
     text-decoration: none;
@@ -34,31 +33,60 @@ p {
     padding: 10px;
 }
 
-ul li:nth-child(1) a{
+/*assigns the first link in the nav bar with it's distinct colour*/
+.nav-links>li:nth-child(1) a{
     color: var(--about-me-color);
 }
 
-ul li:nth-child(2) a {
+/*assigns the second link in the nav bar with it's distinct colour*/
+.nav-links>li:nth-child(2) a {
     color: var(--projects-color);
 }
 
-ul li:nth-child(3) a {
+/*assigns the third link in the nav bar with it's distinct colour*/
+.nav-links>li:nth-child(3) a {
     color: var(--contact-me-color);
 }
 
-ul li:nth-child(1):hover a {
+/*changes the styling of each nav link when the user hovers over it*/
+.nav-links>li:nth-child(1):hover a {
     color: white;
     background-color: var(--about-me-color);
 }
 
-ul li:nth-child(2):hover a {
+/*changes the styling of each nav link when the user hovers over it*/
+.nav-links>li:nth-child(2):hover a {
     color: white;
     background-color: var(--projects-color);
 }
 
-ul li:nth-child(3):hover a {
+/*changes the styling of each nav link when the user hovers over it*/
+.nav-links>li:nth-child(3):hover a {
     color: white;
     background-color: var(--contact-me-color);
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown a {
+    font-size: 1rem;
+}
+
+/*hides the dropdown menu when the uesr isn't interacting with it*/
+.nav-links li .dropdown li {
+    display: none;
+}
+
+.dropdown li {
+    padding: 5px 0;
+}
+
+/*makes the dropdown menus visable to the user upon hovering over the nav link in which the drop down is associated*/
+.nav-links li:hover .dropdown li {
+    display: block;
 }
 
 h2 {
@@ -66,8 +94,15 @@ h2 {
     padding: 10px;
 }
 
+/*sets all the images to a max-width so that they do not try and escape their containers*/
 img {
     max-width: 100%;
+}
+
+/*gives a border to break up the section heading and section content*/
+#about-me .section-heading {
+    border-bottom: var(--about-me-color) solid 3px;
+    margin: 0 20px;
 }
 
 #about-me h2 {
@@ -79,22 +114,53 @@ img {
     max-width: 40%;
 }
 
+/*gives a border to break up the section heading and section content*/
+#projects .section-heading {
+    border-bottom: var(--projects-color) solid 3px;
+    margin: 0 20px;
+}
+
+#projects .section-content p {
+    color: purple;
+    position: relative;
+    
+}
+
 #projects h2 {
     color: var(--projects-color);
 }
 
+.project-main img {
+    padding-top: 10px;
+}
+
 .project-other img {
-    width: 80%;
+    max-width: 90%;
 }
 
 .section-content div {
     padding-bottom: 50px;
 }
 
+/*gives a border to break up the section heading and section content*/
+#contact-me .section-heading {
+    border-bottom: var(--contact-me-color) solid 3px;
+    margin: 0 20px;
+}
+
 #contact-me h2 {
     color: var(--contact-me-color);
 }
 
+/*sizes the contact icons to fit next to their respective text*/
+.contact-icons {
+    max-width: 5%;
+    padding-right: 8px;
+    position: relative;
+    top: 8px;
+}
+
+/*For display sizes 768px and above, font sizes changed to reflect change in screen size*/
 @media screen and (min-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -104,6 +170,7 @@ img {
         font-size: 1.2rem;
     }
 
+    /*sets the header to dispplay horizontally*/
     header {
         padding: 20px 0;
         display: flex;
@@ -119,11 +186,6 @@ img {
         padding: 0 10px;
     }
 
-    #projects {
-        display: flex;
-        flex-direction: column;
-    }
-
     #projects img {
         padding: 0 10px;
     }
@@ -133,12 +195,7 @@ img {
         flex-wrap: wrap;
     }
 
-    .project-main {
-        flex: 0 0 50%;
-        display: flex;
-        flex-direction: column;
-    }
-
+    /*shrinks all project images but the main project image down so that two fit per row*/
     .project-other {
         flex: 0 0 50%;
         display: flex;
@@ -146,6 +203,7 @@ img {
     }
 }
 
+/*For display sizes 992px and above, font sizes changed to reflect change in screen size*/
 @media screen and (min-width: 992px) {
     main section {
         padding-bottom: 20px;
@@ -156,28 +214,18 @@ img {
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     h2 {
         font-size: 1.6rem;
     }
 
-    header {
-        padding: 20px 0;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header ul {
-        display: flex;
-        padding-top: 20px;
-    }
-
     header li {
         padding: 0 20px;
     }
 
+    /*to make the section heading and section content sit side by side*/
     #about-me {
         display: flex;
     }
@@ -185,58 +233,75 @@ img {
     .avatar {
         max-width: 20%;
     }
-
+    /*gives a border to break up the section heading and section content*/
     #about-me .section-heading {
         border-right: var(--about-me-color) solid 3px;
+        border-bottom: none;
+        margin: 0;
     }
 
+    /*sets the avarar image and the paragraph sit side by side*/
     #about-me .section-content{
         display: flex;
         align-items: flex-end;
     }
 
-    /*had to add flex-direction: row here otherwise it  continued to be column which was set in the 768 media query*/
+    /*to make the section heading and section content sit side by side*/
     #projects {
         display: flex;
         flex-direction: row;
     }
 
+    /*gives a border to break up the section heading and section content*/
     #projects .section-heading {
         border-right: var(--projects-color) solid 3px;
+        border-bottom: none;
+        margin: 0;
     }
 
     #projects img {
         padding: 0 15px;
     }
 
+    /*lets the images sit side by side and flow to a different row when they won't all fit on the one row*/
     #projects .section-content {
         display: flex;
         flex-wrap: wrap;
     }
-
+    
+    /*shrinks the project images to they sit two to a row*/
     .project-main {
-        flex: 0 0 50%;
+        flex: 1 1 50%;
         display: flex;
         flex-direction: column;
     }
 
+    /*shrinks the project images to they sit two to a row*/
     .project-other {
-        flex: 0 0 50%;
+        flex: 0 0 40%;
         display: flex;
         flex-direction: column;
     }
 
+    /*to make the section heading and section content sit side by side*/
     #contact-me {
     display: flex;
     }
 
+    /*gives a border to break up the section heading and section content*/
     #contact-me .section-heading {
         border-right: var(--contact-me-color) solid 3px;
+        border-bottom: none;
+        margin: 0;
     }
 
-    #contact-me .contact-info {
+    /* #contact-me .contact-info {
         display: flex;
     
+    } */
+
+    .contact-icons {
+        max-width: 4%;
     }
 
     .section-heading {
