@@ -2,11 +2,12 @@
     --about-me-color: #559cd6;
     --projects-color: #6b9955;
     --contact-me-color: #e69912;
+    --backround-color: #2a2a2a;
 }
 
 * {
     color: white;
-    background-color: #2a2a2a;
+    background-color: var(--backround-color);
     line-height: 1.5;
     font-family: Verdana, 'sans-serif';
 }
@@ -120,10 +121,15 @@ img {
     margin: 0 20px;
 }
 
+/*setting the project titiles to display ontop of the project images*/
 #projects .section-content p {
-    color: purple;
+    padding: 0 0 0 5px;
+    width: 35%;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    border-radius: 5px;
     position: relative;
-    
+    bottom: 45px;
+    left:20px;
 }
 
 #projects h2 {
