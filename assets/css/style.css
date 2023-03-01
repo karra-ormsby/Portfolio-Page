@@ -88,6 +88,9 @@ p {
 /*makes the dropdown menus visable to the user upon hovering over the nav link in which the drop down is associated*/
 .nav-links li:hover .dropdown li {
     display: block;
+    transition-property: display;
+    transition-duration: 4s;
+    transition-delay: 3s;
 }
 
 h2 {
@@ -123,6 +126,7 @@ img {
 
 /*setting the project titiles to display ontop of the project images*/
 #projects .section-content p {
+    text-align: center;
     padding: 0 0 0 5px;
     width: 35%;
     box-shadow: 5px 5px 5px #aaaaaa;
@@ -138,6 +142,8 @@ img {
 
 .project-main img {
     padding-top: 10px;
+    height: auto;
+    width: 1450px;
 }
 
 .project-other img {
@@ -160,7 +166,7 @@ img {
 
 /*sizes the contact icons to fit next to their respective text*/
 .contact-icons {
-    max-width: 5%;
+    max-width: 7%;
     padding-right: 8px;
     position: relative;
     top: 8px;
@@ -189,10 +195,6 @@ img {
     }
 
     header li {
-        padding: 0 10px;
-    }
-
-    #projects img {
         padding: 0 10px;
     }
 
@@ -277,14 +279,14 @@ img {
     
     /*shrinks the project images to they sit two to a row*/
     .project-main {
-        flex: 1 1 50%;
+        flex: 0 0 100%;
         display: flex;
         flex-direction: column;
     }
 
     /*shrinks the project images to they sit two to a row*/
     .project-other {
-        flex: 0 0 40%;
+        flex: 0 0 50%;
         display: flex;
         flex-direction: column;
     }
