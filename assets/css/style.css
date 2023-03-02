@@ -1,7 +1,8 @@
 :root {
-    --about-me-color: #559cd6;
-    --projects-color: #6b9955;
-    --contact-me-color: #e69912;
+    --about-me-color: #ffc600;
+    --projects-color: #49b04f;
+    /* --contact-me-color: #ff9d00; */
+    --contact-me-color: #a851e3;
     --header-footer-background: #122738;
     --backround-color: #193549;
     --border-radius: 5px;
@@ -37,22 +38,21 @@ nav ul a {
     text-shadow: 1px 2px 2px black;
 }
 
-p {
-    font-size: 1.2rem;
-    padding: 20px;
+.nav-links li a {
+    padding: 10px;
 }
 
-/*assigns the first link in the nav bar with it's distinct colour*/
+/*assigns the first link in the nav bar with its distinct colour*/
 .nav-links>li:nth-child(1) a{
     color: var(--about-me-color);
 }
 
-/*assigns the second link in the nav bar with it's distinct colour*/
+/*assigns the second link in the nav bar with its distinct colour*/
 .nav-links>li:nth-child(2) a {
     color: var(--projects-color);
 }
 
-/*assigns the third link in the nav bar with it's distinct colour*/
+/*assigns the third link in the nav bar with its distinct colour*/
 .nav-links>li:nth-child(3) a {
     color: var(--contact-me-color);
 }
@@ -78,16 +78,17 @@ p {
     border-radius: var(--border-radius);
 }
 
+/*makes sure the drop down menu falls in a column under its parent nav*/
 .dropdown {
     display: flex;
     flex-direction: column;
 }
 
 .dropdown a {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
-/*hides the dropdown menu when the uesr isn't interacting with it*/
+/*hides the dropdown menu when the user isn't interacting with it*/
 .nav-links li .dropdown li {
     display: none;
 }
@@ -99,9 +100,6 @@ p {
 /*makes the dropdown menus visable to the user upon hovering over the nav link in which the drop down is associated*/
 .nav-links li:hover .dropdown li {
     display: block;
-    transition-property: display;
-    transition-duration: 4s;
-    transition-delay: 3s;
 }
 
 body {
@@ -119,11 +117,19 @@ img {
     max-width: 100%;
 }
 
+p {
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+.section-heading {
+    margin: 0 20px;
+    box-shadow: 0 4px 2px -2px black;
+}
+
 /*gives a border to break up the section heading and section content*/
 #about-me .section-heading {
     border-bottom: var(--about-me-color) solid 3px;
-    margin: 0 20px;
-    box-shadow: 0 4px 2px -2px black;
 }
 
 #about-me h2 {
@@ -138,12 +144,10 @@ img {
 /*gives a border to break up the section heading and section content*/
 #projects .section-heading {
     border-bottom: var(--projects-color) solid 3px;
-    margin: 0 20px;
-    box-shadow: 0 4px 2px -2px black;
 }
 
 /*setting the project titiles to display ontop of the project images*/
-#projects .section-content p {
+#projects .section-content figcaption {
     background-color: var(--backround-color);
     text-align: center;
     padding: 10px;
@@ -159,30 +163,25 @@ img {
     color: var(--projects-color);
 }
 
-/*TODO: top corners not border radius-ing the same as the bottom*/
 #projects img {
-    border-radius: 5%;
+    padding:0 10px;
+    border-radius: 8%;
+    height: auto;
+    width: 900px;
 }
 
-#projects img {
+/*stops the top projext image from being right up against the .section-heading boorder-bottom*/
+#projects img:first-of-type{
     padding-top: 10px;
-    height: auto;
-    width: 1000px;
 }
 
 .project-other img {
-    max-width: 90%;
-}
-
-.section-content div {
-    padding-bottom: 50px;
+    max-width: 80%;
 }
 
 /*gives a border to break up the section heading and section content*/
 #contact-me .section-heading {
     border-bottom: var(--contact-me-color) solid 3px;
-    margin: 0 20px;
-    box-shadow: 0 4px 2px -2px black;
 }
 
 #contact-me h2 {
@@ -229,7 +228,7 @@ footer {
         padding: 0 10px;
     }
 
-    /*sets the avarar image and the paragraph sit side by side*/
+    /*sets the avatar image and the paragraph sit side by side*/
     #about-me .section-content {
         display: flex;
         align-items: flex-end;
@@ -239,6 +238,7 @@ footer {
         max-width: 25%;
     }
 
+    /*lets the images sit side by side and flow to a different row when they won't all fit on the one row*/
     #projects .section-content {
         display: flex;
         flex-wrap: wrap;
@@ -274,6 +274,13 @@ footer {
         padding: 0 20px;
     }
 
+    /*makes all the .section-heading line up*/
+    .section-heading {
+        padding: 0;
+        margin: 0;
+        min-width: 18%;
+    }
+
     /*to make the section heading and section content sit side by side*/
     #about-me {
         display: flex;
@@ -286,7 +293,6 @@ footer {
     #about-me .section-heading {
         border-right: var(--about-me-color) solid 3px;
         border-bottom: none;
-        margin: 0;
         box-shadow: none;
     }
 
@@ -300,30 +306,16 @@ footer {
     #projects .section-heading {
         border-right: var(--projects-color) solid 3px;
         border-bottom: none;
-        margin: 0;
         box-shadow: none;
     }
 
     #projects img {
         padding: 0 15px;
     }
-
-    /*lets the images sit side by side and flow to a different row when they won't all fit on the one row*/
-    #projects .section-content {
-        display: flex;
-        flex-wrap: wrap;
-    }
     
     /*shrinks the project images to they sit two to a row*/
     .project-main {
         flex: 0 0 90%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /*shrinks the project images to they sit two to a row*/
-    .project-other {
-        flex: 0 0 50%;
         display: flex;
         flex-direction: column;
     }
@@ -337,22 +329,11 @@ footer {
     #contact-me .section-heading {
         border-right: var(--contact-me-color) solid 3px;
         border-bottom: none;
-        margin: 0;
         box-shadow: none;
     }
 
     .contact-icons {
         max-width: 4%;
-    }
-
-    .section-heading {
-        padding: 0;
-        margin: 0;
-        min-width: 18%;
-    }
-
-    .section-content {
-        padding-left: 20px;
     }
 }
 
