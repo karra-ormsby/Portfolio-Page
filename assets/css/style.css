@@ -254,6 +254,7 @@ footer {
 
 /*For display sizes 992px and above, font sizes changed to reflect change in screen size*/
 @media screen and (min-width: 992px) {
+    /*decreases the zoom of the webpage at 992px*/
     main{
         zoom: 0.9;
     }
