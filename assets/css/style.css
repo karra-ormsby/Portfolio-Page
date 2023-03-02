@@ -254,6 +254,10 @@ footer {
 
 /*For display sizes 992px and above, font sizes changed to reflect change in screen size*/
 @media screen and (min-width: 992px) {
+    main{
+        zoom: 0.9;
+    }
+
     main section {
         padding-bottom: 20px;
     }
