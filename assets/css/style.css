@@ -2,18 +2,21 @@
     --about-me-color: #559cd6;
     --projects-color: #6b9955;
     --contact-me-color: #e69912;
-    --backround-color: #2a2a2a;
+    --header-footer-background: #122738;
+    --backround-color: #193549;
+    --border-radius: 5px;
 }
 
 * {
     color: white;
-    background-color: var(--backround-color);
     line-height: 1.5;
     font-family: Verdana, 'sans-serif';
 }
 
 header {
     text-align: center;
+    background-color: #122738;
+    margin-bottom: 10px;
 }
 
 header ul {
@@ -27,11 +30,16 @@ header a {
 
 h1 {
     font-size: 3.5rem;
+    text-shadow: 2px 5px 2px black;
+}
+
+nav ul a {
+    text-shadow: 1px 2px 2px black;
 }
 
 p {
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 20px;
 }
 
 /*assigns the first link in the nav bar with it's distinct colour*/
@@ -53,18 +61,21 @@ p {
 .nav-links>li:nth-child(1):hover a {
     color: white;
     background-color: var(--about-me-color);
+    border-radius: var(--border-radius);
 }
 
 /*changes the styling of each nav link when the user hovers over it*/
 .nav-links>li:nth-child(2):hover a {
     color: white;
     background-color: var(--projects-color);
+    border-radius: var(--border-radius);
 }
 
 /*changes the styling of each nav link when the user hovers over it*/
 .nav-links>li:nth-child(3):hover a {
     color: white;
     background-color: var(--contact-me-color);
+    border-radius: var(--border-radius);
 }
 
 .dropdown {
@@ -93,9 +104,14 @@ p {
     transition-delay: 3s;
 }
 
+body {
+    background-color: var(--backround-color);
+}
+
 h2 {
     font-size: 2rem;
     padding: 10px;
+    text-shadow: 1px 2px 2px black;
 }
 
 /*sets all the images to a max-width so that they do not try and escape their containers*/
@@ -107,6 +123,7 @@ img {
 #about-me .section-heading {
     border-bottom: var(--about-me-color) solid 3px;
     margin: 0 20px;
+    box-shadow: 0 4px 2px -2px black;
 }
 
 #about-me h2 {
@@ -122,28 +139,35 @@ img {
 #projects .section-heading {
     border-bottom: var(--projects-color) solid 3px;
     margin: 0 20px;
+    box-shadow: 0 4px 2px -2px black;
 }
 
 /*setting the project titiles to display ontop of the project images*/
 #projects .section-content p {
+    background-color: var(--backround-color);
     text-align: center;
-    padding: 0 0 0 5px;
+    padding: 10px;
     width: 35%;
     box-shadow: 5px 5px 5px #aaaaaa;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     position: relative;
-    bottom: 45px;
-    left:20px;
+    bottom: 65px;
+    left:50px;
 }
 
 #projects h2 {
     color: var(--projects-color);
 }
 
-.project-main img {
+/*TODO: top corners not border radius-ing the same as the bottom*/
+#projects img {
+    border-radius: 5%;
+}
+
+#projects img {
     padding-top: 10px;
     height: auto;
-    width: 1450px;
+    width: 1000px;
 }
 
 .project-other img {
@@ -158,6 +182,7 @@ img {
 #contact-me .section-heading {
     border-bottom: var(--contact-me-color) solid 3px;
     margin: 0 20px;
+    box-shadow: 0 4px 2px -2px black;
 }
 
 #contact-me h2 {
@@ -172,6 +197,12 @@ img {
     top: 8px;
 }
 
+footer {
+    text-align: end;
+    padding-top: 33px;
+    background-color: var(--header-footer-background);
+}
+
 /*For display sizes 768px and above, font sizes changed to reflect change in screen size*/
 @media screen and (min-width: 768px) {
     h1 {
@@ -184,7 +215,7 @@ img {
 
     /*sets the header to dispplay horizontally*/
     header {
-        padding: 20px 0;
+        padding: 10px 10px;
         display: flex;
         justify-content: space-between;
     }
@@ -196,6 +227,16 @@ img {
 
     header li {
         padding: 0 10px;
+    }
+
+    /*sets the avarar image and the paragraph sit side by side*/
+    #about-me .section-content {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .avatar {
+        max-width: 25%;
     }
 
     #projects .section-content {
@@ -246,12 +287,7 @@ img {
         border-right: var(--about-me-color) solid 3px;
         border-bottom: none;
         margin: 0;
-    }
-
-    /*sets the avarar image and the paragraph sit side by side*/
-    #about-me .section-content{
-        display: flex;
-        align-items: flex-end;
+        box-shadow: none;
     }
 
     /*to make the section heading and section content sit side by side*/
@@ -265,6 +301,7 @@ img {
         border-right: var(--projects-color) solid 3px;
         border-bottom: none;
         margin: 0;
+        box-shadow: none;
     }
 
     #projects img {
@@ -279,7 +316,7 @@ img {
     
     /*shrinks the project images to they sit two to a row*/
     .project-main {
-        flex: 0 0 100%;
+        flex: 0 0 90%;
         display: flex;
         flex-direction: column;
     }
@@ -301,12 +338,8 @@ img {
         border-right: var(--contact-me-color) solid 3px;
         border-bottom: none;
         margin: 0;
+        box-shadow: none;
     }
-
-    /* #contact-me .contact-info {
-        display: flex;
-    
-    } */
 
     .contact-icons {
         max-width: 4%;
@@ -320,11 +353,6 @@ img {
 
     .section-content {
         padding-left: 20px;
-    }
-
-    footer {
-        text-align: end;
-        padding-top: 33px;
     }
 }
 
